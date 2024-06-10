@@ -141,6 +141,16 @@ button:active {
   margin: 0 auto;
 }
 
+.row__column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no-cursor {
+  cursor: not-allowed;
+}
+
 /*
 
 HIGHLIGHTS
@@ -212,7 +222,7 @@ HIGHLIGHTS
 
 /*
 
-FEATURED
+FEATURED/LATEST
 
 */
 
@@ -224,6 +234,7 @@ FEATURED
 
 .books {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .book {
@@ -268,3 +279,28 @@ FEATURED
   padding-right: 6px;
   color: #bfbfbf;
  }
+
+/*
+
+EXPLORE MORE BOOKS
+
+*/
+
+#explore {
+  background-color: rgba(115,66,214,0.1);
+}
+
+/*
+
+FOOTER
+
+*/
+
+footer {
+  background-color: #242424;
+}
+
+.footer__logo--img {
+  width: 160px;
+  filter: grayscale(1) invert(1);
+}
