@@ -1,105 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Library</title>
+  <title>Books</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
-  <script src="books.js"></script>
+  <script src="index.js" defer></script>
+  <script src="books.js" defer></script>
+  <script src="https://kit.fontawesome.com/03673f4e3f.js" crossorigin="anonymous"></script>
 </head>
 <body id="books__body">
-<section>
-  <nav class="nav__books">
-    <div class="nav__container">
-      <img class="logo" src="./assets/Library.svg" alt="">
-      <ul class="nav__links">
-        <li>
-          <a href="#" 
-          class="nav__link">Home</a>
-        </li>
-        <li>
-          <a href="#" 
-          class="nav__link">Contact</a>
-        </li>
-        <li>
-          <a href="#" 
-          class="nav__link 
-          nav__link--primary">Books</a>
-        </li>
-      </ul>
-      <button class="btn__menu" onclick="openMenu()">
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="menu__backdrop">
-        <button class="btn__menu btn__menu--close" onclick="closeMenu()">x
-          <i class="fas ta-times"></i>
-        </button>
-        <ul class="menu__links">
-          <li class="menu__list">
-            <a href="#" class="menu__link" onclick="closeMenu()">Home</a>
-          </li>
-          <li class="menu__list">
-            <a href="#" class="menu__link" onclick="closeMenu()">Books</a>
-          </li>
-          <li class="menu__list">
-            <a href="#" class="menu__link" onclick="closeMenu()">Contact</a>
-          </li>
+  <section>
+    <nav>
+      <div class="nav__container">
+        <img class="logo__img" src="./assets/Library.svg" alt="">
+        <ul class="nav__links">
+          <li class="nav__list"><a class="nav__link" href="#">Home</a></li>
+          <li class="nav__list"><a class="nav__link" href="#">Contact</a></li>
+          <li class="nav__list"><a class="nav__link nav__link--books" href="#features">Books</a></li>
         </ul>
       </div>
+      <button class="btn__menu" onclick="openMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="menu__backdrop">
+        <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <ul class="menu__links">
+          <li class="menu__list"><a class="menu__link" href="#">Home</a></li>
+          <li class="menu__list"><a class="menu__link" href="#features">Books</a></li>
+          <li class="menu__list"><a class="menu__link no-cursor" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+
+  <main id="books__main">
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="books__header">
+            <h2 class="section__title">Featured <span class="purple">Books</span></h2>
+            <select id="filter" onchange="filterBooks(event)">
+              <option value="" disabled selected>Sort</option>
+              <option value="LOW_TO_HIGH">Price, Low to High</option>
+              <option value="HIGH_TO_LOW">Price, High to Low</option>
+              <option value="RATING">Rating</option>
+            </select>
+          </div>
+          <div class="books books__loading">
+            <i class="fa-solid fa-spinner books__loading--spinner"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row row__column">
+        <img class="logo__img logo__img--white" src="/assets/Library.svg" alt="">
+        <ul class="footer__links">
+          <li class="footer__list">
+            <a class="footer__link" href="#">Home</a>
+          </li>
+          <li class="footer__list">
+            <a class="footer__link" href="#">About</a>
+          </li>
+          <li class="footer__list">
+            <a class="footer__link" href="#">Books</a>
+          </li>
+          <li class="footer__list">
+            <a class="footer__link no-cursor" href="#">Contact</a>
+          </li>
+        </ul>
+        <div class="copyright">Copy &copy; 2024 Library</div>
+      </div>
     </div>
-  </nav>
-</section>
-<main id="books__main">
-<section>
-  <div class="container">
-    <div class="row">
-      <div class="books__header">
-        <h2 class="section__title books__header--title">
-          All <span class="purple">Books</span>
-        </h2>
-        <select id="filter">
-          <option value="" disabled selected>Sort</option>
-          <option value="LOW_TO_HIGH">Price, Low to High</option>
-          <option value="HIGH_TO_LOW">Price, High to Low</option>
-          <option value="RATING">Rating</option>
-        </select>
-      </div>
-      <div class="books">
+  </footer>
 
-      </div>
-    </div>
-  </div>
-</section>
-<section>
-
-</section>
-<section>
-
-</section>
-
-</main>
-<footer>
-  <div class="container">
-    <div class="row row__column">
-      <a href="#">
-        <figure class="footer__logo">
-          <img src="./assets/Library.svg"
-          class="footer__logo--img" alt="">
-        </figure>
-      </a>
-      <div class="footer__links">
-        <a href="" class="footer__link">Home</a>
-        <a href="" class="footer__link no-cursor">About</a>
-        <a href="" class="footer__link">Books</a>
-        <a href="" class="footer__link no-cursor">Contact</a>
-      </div>
-      <div class="footer__copyright">
-        Copyright &copy; 2021 Library
-      </div>
-    </div>
-  </div>
- </footer>
 </body>
 </html>
